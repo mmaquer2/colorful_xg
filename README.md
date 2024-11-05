@@ -1,10 +1,9 @@
 # colorful_xg
 
-making cool soccer visualizations with the statsbomb open data 
+making cool soccer visualizations with the statsbomb open data set
 
 
-
-## Local developer setup and dependencies installation
+## developer setup and dependencies installation
 
 
 1. Clone the repository
@@ -45,13 +44,13 @@ npm install
 4. Run the backend
 
 ```bash
-
+ fastapi dev main.py
 ```
 
 5. Run the frontend
 
 ```bash
-
+ npm run dev
 ```
 
 
@@ -86,3 +85,7 @@ Run the test suite(s)
 ```bash
 
 ```
+
+
+
+## Contributing
