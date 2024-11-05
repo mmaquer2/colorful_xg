@@ -8,7 +8,11 @@ making cool soccer visualizations with the statsbomb open data set
 
 1. Clone the repository
 
-2. Setup python environment (the backend via fastapi)
+2. Setup python virtual environment from scratch (the backend via fastapi)
+
+docs from fastapi on setting up a virtual environment:
+https://fastapi.tiangolo.com/virtual-environments/?h=virt#create-a-virtual-environment
+
 
 ```bash
 cd colorful_xg/api 
@@ -26,7 +30,11 @@ which python
 pip install --upgrade pip
 
 # install dependencies
-pip install -r requirements.txt
+pip install -r ../requirements.txt
+
+## update gitignore with the venv directory
+echo "*" > .venv/.gitignore
+
 ```
 
 3. Setup the frontend

@@ -1,8 +1,6 @@
 from fastapi import FastAPI # type: ignore
 from fastapi.responses import JSONResponse # type: ignore
-from statsbombpy import sb # type: ignore
-from statsbomb_helper import StatsBombHelper
-import random
+from helpers.statsbomb_helper import StatsBombHelper
 import json
 
 app = FastAPI()
