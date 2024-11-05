@@ -33,6 +33,9 @@ pip install -r requirements.txt
 
 ```bash
 
+# created with vite using the react-ts template
+npm create vite@latest colorful-xg -- --template react-ts
+
 cd colorful_xg/app
 
 # install dependencies
