@@ -65,27 +65,40 @@ these applications can be run in containers using docker and docker-compose, whi
 
 ```bash
 
+# build the front and backend images
+docker build -t colorful_xg_api -f api/Dockerfile .
+dcoker build -t colorful_xg_app -f app/Dockerfile .
+
 ```
 
 2. Run the containers
 
 ```bash
 
+# run the containers
+docker-compose up
+
 ```
 
 3. Stopping the containers
 
 ```bash
-
+docker-compose down
 ```
 
 
 ### Testing
 
-
 Run the test suite(s)
 
 ```bash
+
+# run the tests for the api back end
+
+
+# run the tests for the front end
+
+
 
 ```
 
