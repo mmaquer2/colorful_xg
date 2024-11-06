@@ -1,6 +1,11 @@
 # colorful_xg
 
-making cool soccer visualizations with the statsbomb open data set
+making cool soccer visualizations with the statsbomb open data set. The goal of this project is to present soccer match data in an interesting and interactive way.
+
+the data from this application is sourced from statsbomb open data set, which is a collection of soccer match data that is freely available for public use. The data is available in json format and contains detailed information about soccer matches, players, and events that occur during the matches. More details can be viewed on the statsbomb website: https://statsbomb.com/what-we-do/soccer-data/
+
+also view the statsbombpy for more information on how to use the statsbomb data:
+https://github.com/statsbomb/statsbombpy
 
 
 ## developer setup and dependencies installation
@@ -21,7 +26,7 @@ cd colorful_xg/api
 python3 -m venv venv
 
 # use the virtual environment 
-source venv/bin/activate
+source .venv/bin/activate
 
 # verify that you are using the virtual environment
 which python

@@ -20,8 +20,6 @@ class VisualizationHelper:
         
         viz_type , art_style = self.select_random_visualization_input()
         
-        
-        
         pass
     
     def create_passmap(self, match_data):
