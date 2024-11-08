@@ -55,21 +55,44 @@ class StatsBombHelper:
         # Get the match event data from StatsBomb
         events = sb.events(match_id=match['match_id'])
         
-        #goals = events[events['type_name'] == 'Goal']
+       
         
-        # create the key event timeline...
+        # create the key event timeline... 
         
         
-        # get all goals from the match
+        
         
         # convert pandas data frame to dictionary for JSON serialization
         game_summary_json = self.convert_numpy(game_summary)
-        
-        print(game_summary_json)
-        
+    
         return game_summary_json
 
-    import numpy as np
+    # get all key stats for the game recap
+    def parse_match_stats_data(events):
+        
+        corners = events[events['type_name'] == 'Corner']
+        fouls = events[events['type_name'] == 'Foul Committed']
+        offsides = events[events['type_name'] == 'Offside']
+        
+        pass
+        
+    
+    
+    # function to create the key event timeline for the game recap
+    def parse_timeline_data(events):
+        ## yellow cards, red cards, goals, substitutions, penalties, etc.
+        pass
+    
+
+    def parse_shot_map_data(events):
+        #shots = events[events['type_name'] == 'Shot']
+        #goals = events[events['type_name'] == 'Goal']
+        
+        pass
+  
+    # function to create the pass network map for the game recap
+    def create_pass_network_map(events):
+        pass
 
     # Helper function to convert numpy types to native Python types
     def convert_numpy(self,obj):
@@ -88,8 +111,7 @@ class StatsBombHelper:
 
 
     def get_random_match(self):
-        comps = sb.competitions() # Get all competitions 
-        first_row = comps.iloc[0] # Get the first row of the competitions data frame
+        comps = sb.competitions() # Get all competitions from StatsBomb
         
         # TODO: Choose a random competition where all rows are available for the free data set
         
@@ -99,7 +121,7 @@ class StatsBombHelper:
         
         # Choose a random match id
         match = random.choice(matches.to_dict(orient="records"))
-        
+
         return match
 	
     def get_random_match_events_json(self):

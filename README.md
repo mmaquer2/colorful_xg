@@ -8,6 +8,13 @@ also view the statsbombpy for more information on how to use the statsbomb data:
 https://github.com/statsbomb/statsbombpy
 
 
+### Technologies Used
+
+- FastAPI
+- React (via Vite) and typescript
+- Docker and Docker Compose
+
+
 ## developer setup and dependencies installation
 
 

@@ -44,7 +44,7 @@ function Footer() {
       <hr style={{ borderColor: "white", marginBottom: "5px" }} />
       <DisclaimerText>
         {" "}
-        This site is not affiliated with or endorsed by any professional sports
+        Data provided by statsbomb. This site is not affiliated with or endorsed by any professional sports.
       </DisclaimerText>
     </FooterContainer>
   );
