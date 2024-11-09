@@ -1,9 +1,8 @@
 import './index.css';
 import { useState } from 'react';
-import { Typography, Button, Box, Divider, Link } from '@mui/material';
+import { Typography, Button, Box, Divider} from '@mui/material';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
 import GameSummary from './components/GameSummary';
 
 function App() {
@@ -14,21 +13,19 @@ function App() {
   async function generateGame() {
     try {
       setIsLoading(true);
-      const url = "http://localhost:8000/sample";
+      const url = "http://localhost:8000/get_random_game";
       const response = await fetch(url);
       if (response.status === 200) {
         const data = await response.json();
         setGameSummaryData(data.game_summary);
+        console.log(data.game_summary);
       } else if (response.status === 404) {
         console.error("ERROR: Could not find game summary data");
       }
     } catch (error) {
       console.error("We encountered a problem... please try again later");
       console.log(error);
-      // update the app state to show an error message
       setError("There was a problem loading the game summary data...please try again");
-
-
     } finally {
       setIsLoading(false); 
     }
@@ -39,7 +36,6 @@ function App() {
       <Header />
           <Box sx={{ maxWidth: '800px', margin: 'auto', padding: '20px' }}>
       
-
         <Typography variant="h6" gutterBottom>
           What is Expected Goals (xG)?
         </Typography>
@@ -60,7 +56,7 @@ function App() {
           Last Update: Nov. 6th, 2024
         </Typography>
         <Divider sx={{ my: 3 }} />
-
+      
         <Button variant="outlined" sx={{ my: 2 }} onClick={generateGame}>
           Generate Game Recap 
         </Button>

@@ -1,3 +1,5 @@
+import XGProgressionChart from "./charts/XGProgressionChart";
+
 interface GameSummaryProps {
   summary_string: string;
   home_team: string;
@@ -21,13 +23,18 @@ interface GameSummaryProps {
 }
 
 type GameSummaryComponentProps = {
-  game_summary_props?: GameSummaryProps | null; // Allow undefined or null for conditional rendering
+  game_summary_props?: GameSummaryProps | null; 
 };
 
+
 function GameSummary({ game_summary_props }: GameSummaryComponentProps) {
-  // Check if data is not yet available and show a loading message
+  //const [joke,setJoke] = useState("");
+  //const random_loading_jokes = ["Generating game summary...", "Crunching the numbers...", "Analyzing the data...", "Simulating the match...", "Calculating the xG...", "Predicting the outcome...", "Running the stats...", "Simulating the game...", "Analyzing the match...", "Generating the report..."];
+  //const random_joke = random_loading_jokes[Math.floor(Math.random() * random_loading_jokes.length)];
+  //setJoke(random_joke);
+
   if (!game_summary_props) {
-    return <p>Loading game summary...</p>;
+    return <p>Loading game summary... </p>;
   }
 
   return (
@@ -35,32 +42,9 @@ function GameSummary({ game_summary_props }: GameSummaryComponentProps) {
       <h2>Match Summary</h2>
 
       <p>{game_summary_props.competition} |  {game_summary_props.match_date}  | {game_summary_props.match_venue} </p>
-      <p>{game_summary_props.home_team} - {game_summary_props.home_team_final_score} |  {game_summary_props.away_team} - {game_summary_props.away_team_final_score}</p>
+      <p>Home Team: {game_summary_props.home_team} - {game_summary_props.home_team_final_score} , xG: {game_summary_props.home_team_xg} |  Away Team: {game_summary_props.away_team} - {game_summary_props.away_team_final_score} , xG: {game_summary_props.away_team_xg}</p>
 
-      
-      <h3>Match Stats</h3>
-      <p>shots</p>
-      <p>possession</p>
-      <p>passes</p>
-      <p>corners</p>
-      <p>yellow cards</p>
-      <p>red cards</p>
-      <p>offsides</p>
-      <p>penalties</p>
-      <p>fouls</p>
-      <p>interceptions</p>
-
-      
-      <p>Home Team Expected Goals (xG): {game_summary_props.home_team_xg}</p>
-      <p>Away Team Expected Goals (xG): {game_summary_props.away_team_xg}</p>
-
-     <h3>Key Events Timeline</h3>
-
-      <h3>Starting Lineups</h3>
-
-      <p>Home Team Starting Lineup:</p>
-
-      <p>Away Team Starting Lineup:</p>
+      <XGProgressionChart xg_progression={game_summary_props.xg_trend} />
 
     </div>
   );
