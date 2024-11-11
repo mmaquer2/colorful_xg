@@ -44,7 +44,7 @@ function GameSummary({ game_summary_props }: GameSummaryComponentProps) {
       <p>{game_summary_props.competition} |  {game_summary_props.match_date}  | {game_summary_props.match_venue} </p>
       <p>Home Team: {game_summary_props.home_team} - {game_summary_props.home_team_final_score} , xG: {game_summary_props.home_team_xg} |  Away Team: {game_summary_props.away_team} - {game_summary_props.away_team_final_score} , xG: {game_summary_props.away_team_xg}</p>
 
-      <XGProgressionChart xg_progression={game_summary_props.xg_trend} />
+      <XGProgressionChart xg_progression={game_summary_props.xg_trend} home_team_name = {game_summary_props.home_team} away_team_name = {game_summary_props.away_team} />
 
     </div>
   );

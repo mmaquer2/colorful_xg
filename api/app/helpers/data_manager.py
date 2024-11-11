@@ -13,7 +13,7 @@ class DataManager:
               
     def select_random_sport(self):
         # TODO: add more sports and make this truly random, for now just return soccer
-        sports = ["soccer", "basketball", "football", "baseball", "hockey", "rugby"]
+        sports = ["golf", "soccer", "basketball", "football", "baseball", "hockey", "rugby"]
 
         return "soccer"
         

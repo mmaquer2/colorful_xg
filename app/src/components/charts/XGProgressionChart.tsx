@@ -1,8 +1,10 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const XGProgressionChart = ({ xg_progression }) => {
+const XGProgressionChart = ({ xg_progression, home_team_name, away_team_name }) => {
   const { home_team_trend, away_team_trend } = xg_progression || { home_team_trend: [], away_team_trend: [] };
+  const home_team = home_team_name || "Home Team";
+  const away_team = away_team_name || "Away Team";
 
   // Create all minutes array
   const allMinutes = [...new Set([
@@ -42,8 +44,10 @@ const XGProgressionChart = ({ xg_progression }) => {
 
     // Get the outcome for the current team
     const outcome = dataKey === 'home_xg' ? payload.home_outcome : payload.away_outcome;
-    const isGoal = outcome === "Goal";
+    //const isGoal = outcome === "Goal";
+    const isGoal = false;
     
+
     if (isGoal) {
       return (
         <g transform={`translate(${cx - 12},${cy - 12})`}>
@@ -122,7 +126,7 @@ const XGProgressionChart = ({ xg_progression }) => {
             <Line
               type="stepAfter"
               dataKey="home_xg"
-              name="Home Team xG"
+              name={home_team_name + " xG"}
               stroke="#2563eb"
               strokeWidth={2}
               dot={<CustomDot />}
@@ -131,7 +135,7 @@ const XGProgressionChart = ({ xg_progression }) => {
             <Line
               type="stepAfter"
               dataKey="away_xg"
-              name="Away Team xG"
+              name={away_team_name + " xG"}
               stroke="#dc2626"
               strokeWidth={2}
               dot={<CustomDot />}
