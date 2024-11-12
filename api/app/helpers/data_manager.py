@@ -1,4 +1,5 @@
 from helpers.statsbomb_helper import StatsBombHelper
+from helpers.mlb_helper import MlbHelper
 #from nhl_helper import NHLHelper
 #from nfl_helper import NFLHelper
 #from visualization_helper import VisualizationHelper
@@ -7,6 +8,7 @@ class DataManager:
     def __init__(self):
         self.data = None
         self.statsbomber_helper = StatsBombHelper()
+        self.mlb_helper = MlbHelper()
         #self.nfl_helper = NFLHelper()
         #self.nhl_helper = NHLHelper()
         #self.visualization_helper = VisualizationHelper()
@@ -25,9 +27,13 @@ class DataManager:
             return self.statsbomber_helper.get_random_match_events_json()
         
         elif selected_sport == "hockey":
-            pass
             #return self.nhl_helper.get_random_game_summary()
-
+            pass
+            
+        elif selected_sport == "golf":
+            #return self.visualization_helper.get_random_game_summary()
+            pass
+        
         elif selected_sport == "football":
             pass
             #return self.nfl_helper.get_random_game_summary()
@@ -37,9 +43,8 @@ class DataManager:
             #return self.nba_helper.get_random_game_summary()
             
         elif selected_sport == "baseball":
-            pass
-            #return self.mlb_helper.get_random_game_summary()
-            
+            return self.mlb_helper.get_random_game_summary()
+                  
         elif selected_sport == "rugby":
             pass
             #return self.rugby_helper.get_random_game_summary()

@@ -1,4 +1,5 @@
 import XGProgressionChart from "./charts/XGProgressionChart";
+import SoccerShotChart from "./charts/SoccerShotChart";
 
 interface GameSummaryProps {
   summary_string: string;
@@ -45,7 +46,7 @@ function GameSummary({ game_summary_props }: GameSummaryComponentProps) {
       <p>Home Team: {game_summary_props.home_team} - {game_summary_props.home_team_final_score} , xG: {game_summary_props.home_team_xg} |  Away Team: {game_summary_props.away_team} - {game_summary_props.away_team_final_score} , xG: {game_summary_props.away_team_xg}</p>
 
       <XGProgressionChart xg_progression={game_summary_props.xg_trend} home_team_name = {game_summary_props.home_team} away_team_name = {game_summary_props.away_team} />
-
+      <SoccerShotChart xg_progression={game_summary_props.xg_trend} home_team_name = {game_summary_props.home_team} away_team_name = {game_summary_props.away_team} />
     </div>
   );
 }

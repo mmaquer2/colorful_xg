@@ -32,6 +32,8 @@ class StatsBombHelper:
             "away_team_goals" : [],
             "key_event_timeline" : [],
             "xg_trend" : {"home_team_trend": {}, "away_team_trend": {}},
+            "away_team_shot_total" : 0,
+            "home_team_shot_total" : 0,
         }
         
         home_team = match['home_team']
@@ -67,6 +69,8 @@ class StatsBombHelper:
         game_summary["away_team_xg"] = shot_xg_trend_chart_data["away_team_total_xg"]
         game_summary["xg_trend"]["home_team_trend"] = shot_xg_trend_chart_data["home_team_shots"]
         game_summary["xg_trend"]["away_team_trend"] = shot_xg_trend_chart_data["away_team_shots"]
+        game_summary["home_team_shot_total"] = len(shot_xg_trend_chart_data["home_team_shots"])
+        game_summary["away_team_shot_total"] = len(shot_xg_trend_chart_data["away_team_shots"])
         
         all_goals = self.get_all_goals(shots)
         game_summary["home_team_goals"] = all_goals[0]
@@ -133,10 +137,10 @@ class StatsBombHelper:
         for index, shot in shots.iterrows():
             if shot['team'] == home_team:
                 home_team_total_xg += shot['shot_statsbomb_xg']
-                home_team_shots.append({"minute": shot["minute"], "current_xg_total" : home_team_total_xg, "shot_outcome": shot['shot_outcome']})          
+                home_team_shots.append({"minute": shot["minute"], "current_xg_total" : home_team_total_xg, "shot_outcome": shot['shot_outcome'], "shot_location": shot['location']})          
             else:
                 away_team_total_xg += shot['shot_statsbomb_xg']
-                away_team_shots.append({"minute": shot["minute"], "current_xg_total" : away_team_total_xg, "shot_outcome": shot['shot_outcome']})
+                away_team_shots.append({"minute": shot["minute"], "current_xg_total" : away_team_total_xg, "shot_outcome": shot['shot_outcome'], "shot_location": shot['location']})
         
         # round the xG to 2 decimal places
         home_team_total_xg = round(home_team_total_xg, 2)

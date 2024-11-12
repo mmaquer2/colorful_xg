@@ -42,12 +42,12 @@ const XGProgressionChart = ({ xg_progression, home_team_name, away_team_name }) 
     const isActualShot = dataKey === 'home_xg' ? payload.isHomeShot : payload.isAwayShot;
     if (!isActualShot) return null;
 
+    //TODO: fix this bug where the soccer not resetting
     // Get the outcome for the current team
-    const outcome = dataKey === 'home_xg' ? payload.home_outcome : payload.away_outcome;
+    //const outcome = dataKey === 'home_xg' ? payload.home_outcome : payload.away_outcome;
     //const isGoal = outcome === "Goal";
     const isGoal = false;
     
-
     if (isGoal) {
       return (
         <g transform={`translate(${cx - 12},${cy - 12})`}>
@@ -126,7 +126,7 @@ const XGProgressionChart = ({ xg_progression, home_team_name, away_team_name }) 
             <Line
               type="stepAfter"
               dataKey="home_xg"
-              name={home_team_name + " xG"}
+              name={home_team + " xG"}
               stroke="#2563eb"
               strokeWidth={2}
               dot={<CustomDot />}
@@ -135,7 +135,7 @@ const XGProgressionChart = ({ xg_progression, home_team_name, away_team_name }) 
             <Line
               type="stepAfter"
               dataKey="away_xg"
-              name={away_team_name + " xG"}
+              name={away_team + " xG"}
               stroke="#dc2626"
               strokeWidth={2}
               dot={<CustomDot />}
