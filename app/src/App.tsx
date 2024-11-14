@@ -35,21 +35,21 @@ function App() {
     <>
       <Header />
           <Box sx={{ maxWidth: '800px', margin: 'auto', padding: '20px' }}>
-      
+        
+        <Typography variant="h6" gutterBottom>
+          What is colorful xG?
+        </Typography>
+
+        <Typography variant="body1" gutterBottom>
+          Colorful xG is a tool that generates visual summaries of historical sporting events from open source data. The tool provides a detailed breakdown of key events, player performances, and match statistics in a visually engaging format. Colorful xG aims to make sports analytics more accessible, interesting, and fun for all sports fans.
+        </Typography>
+       
         <Typography variant="h6" gutterBottom>
           What is Expected Goals (xG)?
         </Typography>
 
         <Typography variant="body1" gutterBottom>
           Expected goals (xG) is a statistical metric that quantifies the likelihood of a shot resulting in a goal. xG is calculated based on a number of factors, including the distance from goal, angle of the shot, and type of play leading up to the shot. It provides a more accurate representation of a team's performance than simply looking at the number of goals scored, as it takes into account the quality of chances created. This method is applied in a variety of sports to evaluate player and team performance.
-        </Typography>
-
-        <Typography variant="h6" gutterBottom>
-          What is colorful xG?
-        </Typography>
-
-        <Typography variant="body1" gutterBottom>
-          Colorful xG is a tool that generates visual summaries of historical soccer matches based on open source data provided by hudl statsbomb. The tool provides a detailed breakdown of key events, player performances, and match statistics in a visually engaging format. Colorful xG aims to make complex soccer analytics more accessible and fun for fans of the beautiful game.
         </Typography>
 
         <Typography variant="caption" color="textSecondary">
