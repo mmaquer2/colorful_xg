@@ -23,17 +23,9 @@ class NHLHelper:
             "miss": 0,
             "giveaway": -1,
             "takeaway": 1,
-            "stoppage": 0
-            
-            
+            "stoppage": 0   
         }
-        
-       
-        
-        
-        
-        
-        
+            
     def parse_game_data(self, game):
         pass    
         

@@ -27,10 +27,10 @@ https://fastapi.tiangolo.com/virtual-environments/?h=virt#create-a-virtual-envir
 
 
 ```bash
-cd colorful_xg/api 
+cd colorful_xg/api/app 
 
 # create a virtual environment
-python3 -m venv venv
+python3 -m venv .venv
 
 # use the virtual environment 
 source .venv/bin/activate
@@ -62,7 +62,6 @@ cd colorful_xg/app
 npm install
 
 ```
-
 
 4. Run the backend
 
@@ -112,16 +111,15 @@ docker-compose down
 Run the test suite(s)
 
 ```bash
-
 # run the tests for the api back end
-
+coming soon
 
 # run the tests for the front end
-
-
+coming soon
 
 ```
 
 
 
 ## Contributing
+coming soon

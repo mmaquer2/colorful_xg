@@ -1,15 +1,35 @@
-export const getGameSummary= async () => {
-    try {
-      const url = import.meta.env.COLORFUL_XG_API_URL;
-      const response = await fetch(url);
-      if (response.status === 200) {
-        const data = await response.json();
-        return data;
-      }
-      if (response.status === 404) {
-        console.error("ERROR: Could not find game summary data");
-      }
-    } catch (error) {
-      console.error("ERROR: Could not fetch game summary data", error);
-    }
-  };
+const selectRandomSport = async () => {
+  // select a random sport from the list
+  const sports = ["soccer"]
+  const selected = sports[Math.floor(Math.random() * sports.length)];
+  return selected;
+}
+
+const getRandomEvent = async (sport?: string) => {
+ 
+  let selectedSport = sport?.toLowerCase() ?? "soccer";
+  if (sport === "random") {
+    selectedSport = await selectRandomSport();
+  }
+  
+  let url = "";
+  
+  switch (selectedSport) {
+    case "soccer":
+      url = "http://localhost:8000/get_random_game";
+      break;
+    default:
+      return null;
+  }
+
+  const response = await fetch(url);
+  if (response.status === 200) {
+    const data = await response.json();
+    return data;
+  } else {
+    console.error("ERROR: Could not find game summary data");
+    return null;
+  }
+}
+
+export {getRandomEvent};

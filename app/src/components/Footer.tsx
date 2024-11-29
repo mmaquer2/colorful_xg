@@ -31,15 +31,7 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterText>
-        Subscribe to our email newsletter, powered by{" "}
-        <SubscribeLink
-          href="https://bestofseven.substack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Substack
-        </SubscribeLink>
-        .
+        colorful xg is built by mike maquera.
       </FooterText>
       <hr style={{ borderColor: "white", marginBottom: "5px" }} />
       <DisclaimerText>
