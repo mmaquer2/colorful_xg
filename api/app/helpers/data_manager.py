@@ -1,5 +1,5 @@
-from helpers.statsbomb_helper import StatsBombHelper
-from helpers.mlb_helper import MlbHelper
+from .statsbomb_helper import StatsBombHelper
+#from helpers.mlb_helper import MlbHelper
 #from nhl_helper import NHLHelper
 #from nfl_helper import NFLHelper
 #from visualization_helper import VisualizationHelper
@@ -8,7 +8,7 @@ class DataManager:
     def __init__(self):
         self.data = None
         self.statsbomber_helper = StatsBombHelper()
-        self.mlb_helper = MlbHelper()
+        #self.mlb_helper = MlbHelper()
         #self.nfl_helper = NFLHelper()
         #self.nhl_helper = NHLHelper()
         #self.visualization_helper = VisualizationHelper()

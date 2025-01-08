@@ -1,7 +1,7 @@
 from fastapi import FastAPI # type: ignore
 from fastapi.responses import JSONResponse # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
-from helpers.data_manager import DataManager
+from .helpers.data_manager import DataManager
 
 app = FastAPI()
 
