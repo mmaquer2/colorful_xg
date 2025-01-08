@@ -86,7 +86,7 @@ these applications can be run in containers using docker and docker-compose, whi
 
 # build the front and backend images from the project root directory
 docker build -t colorful_xg_api -f api/Dockerfile .
-dcoker build -t colorful_xg_app -f app/Dockerfile .
+ docker build -t colorful_xg_frontend -f frontend/DockerFile .
 
 ```
 
@@ -99,7 +99,7 @@ dcoker build -t colorful_xg_app -f app/Dockerfile .
 docker run -d -p 8000:8000 colorful_xg_api
 
 # run the frontend
-docker run -d -p 3000:80 colorful_xg_app
+docker run -d -p 5173:5173 colorful_xg_frontend
 
 ```
 

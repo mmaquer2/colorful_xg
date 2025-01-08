@@ -1,24 +1,20 @@
-version: '0.1'
+version: '3'
 
 services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    ports:
+      - "8000:8000"
+    container_name: colorful_xg_api
+
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "3000:80"
-    networks:
-      - app-network
-
-  backend:
-    build:
-      context: ./backend
-    ports:
-      - "8000:8000"
-    networks:
-      - app-network
-    environment:
-      - BASE_URL=http://frontend:3000
-
-networks:
-  app-network:
-    driver: bridge
+      - "5173:5173"
+    container_name: colorful_xg_frontend
+    depends_on:
+      - api

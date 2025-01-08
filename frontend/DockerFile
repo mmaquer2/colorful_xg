@@ -1,0 +1,20 @@
+# Build stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY frontend/app/package.json frontend/app/package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the app directory contents
+COPY frontend/app/ .
+
+# Expose Vite's default port
+EXPOSE 5173
+
+# Run dev server with host flag to allow external connections
+CMD ["npm", "run", "dev", "--", "--host"]
+
+
